@@ -1,0 +1,10 @@
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\bin\Debug\9.8 Exercícios.exe.config
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\bin\Debug\9.8 Exercícios.exe
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\bin\Debug\9.8 Exercícios.pdb
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\obj\Debug\9.8 Exercícios.csprojAssemblyReference.cache
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\obj\Debug\_9._8_Exercícios.Form1.resources
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\obj\Debug\_9._8_Exercícios.Properties.Resources.resources
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\obj\Debug\9.8 Exercícios.csproj.GenerateResource.cache
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\obj\Debug\9.8 Exercícios.csproj.CoreCompileInputs.cache
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\obj\Debug\9.8 Exercícios.exe
+C:\Users\Saulão Barbieri\source\repos\9.8 Exercícios\9.8 Exercícios\obj\Debug\9.8 Exercícios.pdb
