@@ -12,9 +12,12 @@ namespace _9._8_Exercícios
 {
     public partial class Form1 : Form
     {
+        //inicialização das classes
         Conta contaCorrente01 = new Conta();
         ContaPoupanca contaPoupanca01 = new ContaPoupanca();
         TotalizadorDeContas totalizador = new TotalizadorDeContas();
+
+        // teste atualização github 02
 
         public Form1()
         {
@@ -42,6 +45,7 @@ namespace _9._8_Exercícios
 
         private void botaoCadastrar_Click(object sender, EventArgs e)
         {
+            //cadastro da classe Conta Corrente
             string mensagem = contaCorrente01.Cadastrar(
                 Convert.ToString(textoTitular.Text),
                 Convert.ToDouble(textoNumero.Text),
@@ -53,7 +57,7 @@ namespace _9._8_Exercícios
 
         private void botaoExibir_Click(object sender, EventArgs e)
         {
-
+            //exibição das informações da Conta Corrente
             MessageBox.Show("Nome da Conta: " +contaCorrente01.NomeDaConta);
             MessageBox.Show("Número da Conta: " + contaCorrente01.NumeroDaConta);
             MessageBox.Show("Saldo da Conta: R$ "+ contaCorrente01.SaldoDaConta);
@@ -66,6 +70,8 @@ namespace _9._8_Exercícios
             //string mensage = contaCorrente01.Depositar(Convert.ToDouble(valorDigitado.Text)) 
             //    ? "Depósito Realizado Com Sucesso!" : "Nenhuma conta foi Cadastrada!";
             //MessageBox.Show(mensage);
+
+            // para depositar deve ter um número de Conta Corrente cadastrado
 
             if (contaCorrente01.NumeroDaConta != 0)
             {
@@ -80,12 +86,28 @@ namespace _9._8_Exercícios
 
         }
 
+        private void botaoCpCadastrar_Click(object sender, EventArgs e)
+        {
+
+            //cadastro de Conta Poupança
+            string mensagem = contaPoupanca01.Cadastrar(
+                Convert.ToString(cpTextoTitular.Text),
+                Convert.ToDouble(cpTextoNumero.Text),
+                Convert.ToDouble(cpTextoSaldo.Text),
+                Convert.ToString(cpTextoCPF.Text))
+                ? "Cadastro Realizado Com Sucesso" : "Necessário Cadastrar CPF";
+            MessageBox.Show(mensagem);
+        }
+
+
         private void botaoCpDepositar_Click(object sender, EventArgs e)
         {
 
             //string mensage = contaPoupanca01.Depositar(Convert.ToDouble(valorDigitado.Text))
             //    ? "Depósito Realizado Com Sucesso!" : "Nenhuma conta foi Cadastrada!";
             //MessageBox.Show(mensage);
+
+            // para depositar deve ter um número de Conta Poupança cadastrado
 
             if (contaPoupanca01.NumeroDaConta != 0)
             {
@@ -109,22 +131,27 @@ namespace _9._8_Exercícios
 
         private void botaoCpSacar_Click(object sender, EventArgs e)
         {
-            string cpmensagem = contaPoupanca01.Sacar(Convert.ToDouble(cpValorDigitado.Text))
-                ? "Saque Realizado Com Sucesso!" : "Essa Transação não é possível";
-            MessageBox.Show(cpmensagem);
+            //string cpmensagem = contaPoupanca01.Sacar(Convert.ToDouble(cpValorDigitado.Text))
+            //    ? "Saque Realizado Com Sucesso!" : "Essa Transação não é possível";
+            //MessageBox.Show(cpmensagem);
+
+            double valorOperacao = Convert.ToDouble(cpValorDigitado.Text);
+
+            if (valorOperacao < contaPoupanca01.SaldoDaConta)
+            {
+                contaPoupanca01.Sacar(valorOperacao);
+                MessageBox.Show("Saque realizado com Sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Saldo Insuficiente!");
+            }
+
+
         }
 
 
-        private void botaoCpCadastrar_Click(object sender, EventArgs e)
-        {
-            string mensagem = contaPoupanca01.Cadastrar(
-                Convert.ToString(cpTextoTitular.Text),
-                Convert.ToDouble(cpTextoNumero.Text),
-                Convert.ToDouble(cpTextoSaldo.Text),
-                Convert.ToString(cpTextoCPF.Text))
-                ? "Cadastro Realizado Com Sucesso" : "Necessário Cadastrar CPF";
-            MessageBox.Show(mensagem);
-        }
+        
 
         private void botaoCpExibir_Click(object sender, EventArgs e)
         {
@@ -136,8 +163,20 @@ namespace _9._8_Exercícios
 
         private void botaoTotalizador_Click(object sender, EventArgs e)
         {
-            totalizador.Soma(contaCorrente01);
-            totalizador.Soma(contaPoupanca01);
+            if (totalizador.ValorTotal <= 0)
+            {
+                totalizador.Soma(contaCorrente01);
+                totalizador.Soma(contaPoupanca01);
+            }
+            else
+            {
+                totalizador.Zerar(0);
+
+                totalizador.Soma(contaCorrente01);
+                totalizador.Soma(contaPoupanca01);
+            }
+
+            
 
             MessageBox.Show("Saldo Total das Contas: R$ " + totalizador.ValorTotal);
         }

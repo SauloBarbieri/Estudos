@@ -4,10 +4,15 @@
     {
         public  double ValorTotal { get; private set; }
 
+       
         public void Soma(Conta conta)
         {
             ValorTotal += conta.SaldoDaConta;
-            
+        }
+
+        public void Zerar(double zero)
+        {
+            ValorTotal = zero;
         }
     }
 }
